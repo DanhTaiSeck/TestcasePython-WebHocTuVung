@@ -1,0 +1,158 @@
+{
+  "api_base_url": "http://localhost:3000/api",
+  "frontend_url": "http://localhost:5000",
+  "test_timeout": 30,
+  "max_retries": 3,
+  "environments": {
+    "local": {
+      "api_url": "http://localhost:3000/api",
+      "frontend_url": "http://localhost:5000",
+      "database_url": "local",
+      "description": "Local development environment"
+    },
+    "staging": {
+      "api_url": "http://staging.vocabularyapp.com/api",
+      "frontend_url": "http://staging.vocabularyapp.com",
+      "database_url": "staging_db",
+      "description": "Staging environment for pre-production testing"
+    },
+    "production": {
+      "api_url": "https://api.vocabularyapp.com/api",
+      "frontend_url": "https://vocabularyapp.com",
+      "database_url": "production_db",
+      "description": "Production environment (use with caution)"
+    }
+  },
+  "test_categories": {
+    "unit": true,
+    "integration": true,
+    "api": true,
+    "performance": false,
+    "security": true,
+    "smoke": true,
+    "regression": true
+  },
+  "test_execution": {
+    "parallel_execution": false,
+    "max_workers": 4,
+    "test_order": "random",
+    "fail_fast": false,
+    "retry_failed_tests": true,
+    "retry_count": 2
+  },
+  "reporting": {
+    "html_report": true,
+    "json_report": true,
+    "console_output": true,
+    "coverage_report": true,
+    "performance_metrics": true,
+    "save_screenshots": false,
+    "report_directory": "tests/reports"
+  },
+  "performance_thresholds": {
+    "api_response_time_avg": 2.0,
+    "api_response_time_max": 5.0,
+    "concurrent_success_rate": 90.0,
+    "memory_limit_mb": 100,
+    "cpu_usage_percent": 80,
+    "database_query_time": 1.0
+  },
+  "api_testing": {
+    "base_endpoints": [
+      "/vocabulary",
+      "/vocabulary/{id}"
+    ],
+    "test_data_cleanup": true,
+    "validate_response_schema": true,
+    "test_pagination": true,
+    "test_sorting": true,
+    "test_filtering": true
+  },
+  "security_testing": {
+    "test_xss_prevention": true,
+    "test_sql_injection": true,
+    "test_input_validation": true,
+    "test_authentication": false,
+    "test_authorization": false,
+    "test_rate_limiting": true
+  },
+  "data_generation": {
+    "vocabulary_batch_size": 10,
+    "large_dataset_size": 100,
+    "performance_dataset_size": 1000,
+    "use_realistic_data": true,
+    "include_unicode_tests": true,
+    "include_edge_cases": true
+  },
+  "browser_testing": {
+    "enabled": false,
+    "browsers": ["chrome", "firefox"],
+    "headless": true,
+    "window_size": "1920x1080",
+    "timeout": 30
+  },
+  "database_testing": {
+    "test_transactions": true,
+    "test_constraints": true,
+    "test_performance": true,
+    "backup_before_tests": false,
+    "cleanup_after_tests": true
+  },
+  "monitoring": {
+    "track_response_times": true,
+    "track_memory_usage": true,
+    "track_cpu_usage": false,
+    "track_network_usage": false,
+    "alert_thresholds": {
+      "response_time": 3.0,
+      "memory_usage": 150,
+      "error_rate": 5.0
+    }
+  },
+  "notifications": {
+    "enabled": false,
+    "email_reports": false,
+    "slack_notifications": false,
+    "webhook_url": "",
+    "notify_on_failure": true,
+    "notify_on_success": false
+  },
+  "test_data": {
+    "sample_vocabulary_count": 10,
+    "quiz_questions_count": 5,
+    "performance_test_iterations": 50,
+    "concurrent_users": 10,
+    "stress_test_duration": 60
+  },
+  "validation_rules": {
+    "max_word_length": 100,
+    "max_meaning_length": 500,
+    "allowed_difficulties": ["easy", "medium", "hard"],
+    "allowed_categories": ["noun", "verb", "adjective", "adverb", "phrase", "other"],
+    "required_fields": ["word", "meaning"],
+    "optional_fields": ["difficulty", "category", "example", "pronunciation"]
+  },
+  "error_handling": {
+    "expected_error_codes": [400, 401, 403, 404, 422, 429, 500],
+    "timeout_handling": true,
+    "network_error_handling": true,
+    "retry_on_network_error": true,
+    "log_all_errors": true
+  },
+  "quiz_testing": {
+    "test_scoring_logic": true,
+    "test_time_tracking": true,
+    "test_answer_validation": true,
+    "test_randomization": true,
+    "test_difficulty_filtering": true,
+    "answer_comparison_case_sensitive": false,
+    "allow_partial_matches": false
+  },
+  "cleanup": {
+    "remove_test_data": true,
+    "clear_cache": true,
+    "reset_counters": true,
+    "archive_old_reports": true,
+    "max_report_age_days": 30
+  }
+}
