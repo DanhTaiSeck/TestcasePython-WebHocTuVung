@@ -1,0 +1,145 @@
+.quiz-body {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  height: calc(100vh - 75px);
+  background: linear-gradient(145deg, #0574d6, #004aad);
+  animation: bodyFade 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowScore {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+    text-shadow: 0 0 5px #0f0, 0 0 15px #0f0;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+    text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+  }
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bodyFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: bounceIn 0.8s ease-out;
+}
+
+.quiz-content {
+  max-width: 600px;
+  animation: fadeIn 1.2s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+  animation: bounceIn 1s ease;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+  animation: fadeIn 1.2s ease;
+}
+
+.word {
+  margin: auto;
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff;
+  animation: bounceIn 1s ease-out;
+}
+
+.input-box {
+  width: 80%;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.input-box:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px #007bff;
+}
+
+.check-btn,
+.start-btn,
+.restart-btn {
+  background: #d00000;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  animation: buttonPulse 2s infinite;
+}
+.check-btn:hover,
+.start-btn:hover,
+.restart-btn:hover {
+  background-color: #a60000;
+  transform: scale(1.05);
+}
+
+.score-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00cc00;
+  margin-top: 20px;
+  animation: glowScore 1s ease-in-out;
+}
+
+
+

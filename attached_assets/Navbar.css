@@ -1,0 +1,80 @@
+/* Navbar tổng thể */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: linear-gradient(90deg, #0077f7, #457ee8, #017cff);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  animation: slideDown 1s ease-in-out;
+}
+
+/* Logo có hiệu ứng glow */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00f7ff;
+  text-shadow: 0 0 5px #00f7ff, 0 0 10px #00f7ff;
+  animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+/* Danh sách liên kết */
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+/* Liên kết + icon */
+.nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-item .icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hover */
+.nav-item:hover {
+  color: #00f7ff;
+}
+
+.nav-item:hover .icon {
+  transform: scale(1.2);
+}
+
+/* Animation cho navbar xuất hiện */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Glow logo pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #1500ff, 0 0 10px #00f7ff, 0 0 15px #00f7ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #08c1ff, 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+  }
+}
+

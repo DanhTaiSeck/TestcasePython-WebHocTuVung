@@ -1,0 +1,198 @@
+/* Nền chính */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 88vh;
+  background: radial-gradient(circle at center, #1f78c2 0%, #0b4d91 40%, #073b73 100%);
+  overflow: hidden;
+  position: relative;
+  animation: bodyFade 1s ease-in-out;
+}
+
+/* Glow animation đẹp */
+.background-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 99%;
+  background-size: contain; /* hoặc 100% 100% nếu bạn muốn ép */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+  margin-left: 300px;
+}
+
+.background-glow img{
+  top: 0%;
+  left: 0%;
+  width: 62%;
+  height: 99%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Bọc nội dung + ảnh chung 1 hàng */
+.home-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  padding: 40px 80px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+
+/* Nội dung chính bên trái */
+.home-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  max-width: 450px;
+  color: #fff;
+  animation: slideInLeft 1s ease forwards;
+  margin-right: 900px;
+  margin-top: 0px;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Ảnh bên phải */
+.image-container img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: floatImage 3s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Nút bấm */
+.home-buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 10px 10px 0 0;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn.glow {
+  background: #14e5f8;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+              0 0 20px rgba(0, 198, 255, 0.6),
+              0 0 40px rgba(0, 198, 255, 0.7);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #007bff;
+}
+
+/* Câu quote */
+.quote {
+  margin-top: 25px;
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 1;
+  }
+}
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.stars::before, .stars::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveStars 100s linear infinite;
+  opacity: 0.2;
+}
+
+.stars::after {
+  background-size: 80px 80px;
+  animation-direction: reverse;
+  opacity: 0.3;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-500px, -500px);
+  }
+}
